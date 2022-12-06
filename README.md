@@ -5,12 +5,6 @@ A new Flutter project.
 ## Getting Started
 
 This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ ## Text Field
+ 
+![1](https://user-images.githubusercontent.com/101357738/205850574-32fa48de-11ad-4fc1-af69-8613d2ec0d6f.png)

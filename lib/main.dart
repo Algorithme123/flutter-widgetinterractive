@@ -24,7 +24,28 @@ class _MyAppState extends State<MyApp> {
     "pain": false
   };
 
+  List<Widget> checkList() {
+    List<Widget> l = [];
+    check.forEach((key, value) {
+      Row row = Row(
+        mainAxisAlignment:  MainAxisAlignment.center,
+        children: <Widget>[
+          Text(key),
+          Checkbox(value: (value),
+              onChanged: ( b){
+            setState(() {
+              check[key]=b;
+            });
 
+
+          })
+
+        ],
+      );
+      l.add(row);
+    });
+    return l;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,8 +85,13 @@ class _MyAppState extends State<MyApp> {
                 },
                 decoration: InputDecoration(labelText: "Entrer Votre Nom"),
               ),
+
               Text(changed ?? ''),
-              Text(submitted ?? '')
+              Text(submitted ?? ''),
+              Column(
+                mainAxisAlignment:  MainAxisAlignment.center,
+                children: checkList(),
+              )
             ],
           ),
         ),

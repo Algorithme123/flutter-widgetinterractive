@@ -88,6 +88,8 @@ class _MyAppState extends State<MyApp> {
 
               Text(changed ?? ''),
               Text(submitted ?? ''),
+
+              //Column pour les CheckBox
               Column(
                 mainAxisAlignment:  MainAxisAlignment.center,
                 children: checkList(),

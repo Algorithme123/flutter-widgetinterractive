@@ -14,6 +14,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   var changed;
   var itemSelectionne;
+  var interrupteur = false;
 
   var submitted;
 
@@ -113,10 +114,12 @@ class _MyAppState extends State<MyApp> {
 
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [Text("CheckBOx button ",style: TextStyle(
-                  color: Colors.blueAccent,
-                  fontSize: 22.0
-                ),)],
+                children: [
+                  Text(
+                    "CheckBOx button ",
+                    style: TextStyle(color: Colors.blueAccent, fontSize: 22.0),
+                  )
+                ],
               ),
 
               //Column pour les CheckBox
@@ -126,19 +129,43 @@ class _MyAppState extends State<MyApp> {
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [Text("Radio Button ",style: TextStyle(
-                  color: Colors.red,
-                  fontSize: 22.0
-                ),)],
+                children: const [
+                  Text(
+                    "Radio Button ",
+                    style: TextStyle(color: Colors.red, fontSize: 22.0),
+                  )
+                ],
               ),
               Row(
-                mainAxisAlignment:  MainAxisAlignment.center
-                ,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: radios(),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Text(
+                    "Switch Button ",
+                    style: TextStyle(color: Colors.green, fontSize: 22.0),
+                  )
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text("Aimez- vous Daniel ?"),
+                  Switch(
+                      value: interrupteur,
+                      inactiveTrackColor: Colors.red,
+                      activeColor: Colors.green,
+                      onChanged: (b) {
+                        setState(() {
+                          interrupteur = b;
+                        });
+                      })
+                ],
               )
             ],
           ),
-          
         ),
       ),
     );

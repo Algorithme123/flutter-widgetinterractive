@@ -15,8 +15,8 @@ class _MyAppState extends State<MyApp> {
   var changed;
   var itemSelectionne;
   var interrupteur = false;
-
   var submitted;
+  var slider = 0.0;
 
   // Pour les RadioButton
 
@@ -160,6 +160,24 @@ class _MyAppState extends State<MyApp> {
                       onChanged: (b) {
                         setState(() {
                           interrupteur = b;
+                        });
+                      }),
+
+                ],
+              ),
+              Column(
+                
+                children: [
+                  Text("Valeur du slide $slider"),
+                  Slider(value: slider,
+                      inactiveColor: Colors.yellow,
+                      activeColor: Colors.teal,
+                      divisions: 5,
+                      min : 0.0,
+                      max : 10.0,
+                      onChanged: (d){
+                        setState(() {
+                          slider=d;
                         });
                       })
                 ],

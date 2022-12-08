@@ -13,8 +13,32 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   var changed;
+  var itemSelectionne;
 
   var submitted;
+
+  // Pour les RadioButton
+
+  List<Widget> radios() {
+    List<Widget> l = [];
+    for (int x = 0; x < 2; x++) {
+      Row row = Row(
+        children: [
+          Text("Choix Numero ${x + 1}"),
+          Radio(
+              value: x,
+              groupValue: itemSelectionne,
+              onChanged: (i) {
+                setState(() {
+                  itemSelectionne = i;
+                });
+              })
+        ],
+      );
+      l.add(row);
+    }
+    return l;
+  }
 
   // Pour les check BOX
   Map check = {
@@ -28,18 +52,16 @@ class _MyAppState extends State<MyApp> {
     List<Widget> l = [];
     check.forEach((key, value) {
       Row row = Row(
-        mainAxisAlignment:  MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(key),
-          Checkbox(value: (value),
-              onChanged: ( b){
-            setState(() {
-              check[key]=b;
-            });
-
-
-          })
-
+          Checkbox(
+              value: (value),
+              onChanged: (b) {
+                setState(() {
+                  check[key] = b;
+                });
+              })
         ],
       );
       l.add(row);
@@ -89,13 +111,34 @@ class _MyAppState extends State<MyApp> {
               Text(changed ?? ''),
               Text(submitted ?? ''),
 
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [Text("CheckBOx button ",style: TextStyle(
+                  color: Colors.blueAccent,
+                  fontSize: 22.0
+                ),)],
+              ),
+
               //Column pour les CheckBox
               Column(
-                mainAxisAlignment:  MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: checkList(),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [Text("Radio Button ",style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 22.0
+                ),)],
+              ),
+              Row(
+                mainAxisAlignment:  MainAxisAlignment.center
+                ,
+                children: radios(),
               )
             ],
           ),
+          
         ),
       ),
     );

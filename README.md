@@ -12,3 +12,18 @@ This project is a starting point for a Flutter application.
 # CheckBox ☑ 
 
 ![image](https://user-images.githubusercontent.com/101357738/205856201-72474321-4664-4e6b-a86a-78be8c294342.png)
+
+
+# Slider 
+
+![Slider](https://user-images.githubusercontent.com/101357738/206706611-28cbbb01-97a8-4913-ae83-a2dcd935c63f.png)
+
+# Radio btn
+
+![radio btn](https://user-images.githubusercontent.com/101357738/206706678-bb8e230b-b626-4b8a-a620-9287c88a2685.png)
+
+
+# Switch 
+
+
+![swi](https://user-images.githubusercontent.com/101357738/206706790-89924716-230a-46a0-ab0e-f2c0918813a5.png)
